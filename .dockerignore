@@ -1,0 +1,15 @@
+.git
+.agents
+.codex
+**/.env
+**/.venv
+**/__pycache__
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+**/node_modules
+**/dist
+**/*.db
+**/*.db-shm
+**/*.db-wal
+restaurant-api

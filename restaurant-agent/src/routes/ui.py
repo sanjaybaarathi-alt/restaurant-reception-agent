@@ -7,7 +7,9 @@ from fastapi.responses import FileResponse
 
 router = APIRouter(include_in_schema=False)
 PROJECT_ROOT = Path(__file__).parents[2]
-REACT_DIST = PROJECT_ROOT / "frontend" / "dist"
+LOCAL_REACT_DIST = PROJECT_ROOT.parent / "frontend" / "dist"
+CONTAINER_REACT_DIST = PROJECT_ROOT / "frontend" / "dist"
+REACT_DIST = LOCAL_REACT_DIST if LOCAL_REACT_DIST.exists() else CONTAINER_REACT_DIST
 FRONTEND_DIRECTORY = REACT_DIST if (REACT_DIST / "index.html").exists() else PROJECT_ROOT / "src" / "resources"
 INDEX_FILE = FRONTEND_DIRECTORY / "index.html"
 

@@ -62,7 +62,7 @@ The streaming and JSON endpoints share `(session_id, client_message_id)` idempot
 
 ## Portfolio frontend
 
-The frontend becomes an independent `restaurant-agent/frontend/` React + TypeScript project built with Vite. Development runs on port `5173` with API paths proxied to FastAPI on `8080`; the production Docker build emits assets served by FastAPI at `/`. The interface is chat-first after compact identity onboarding and includes streaming text, safe progress states, quick prompts, retry/reconnect behavior, responsive mobile layout, keyboard support, accessible live regions, and polished empty and error states. No provider key or restaurant business rule enters the browser bundle.
+The frontend becomes an independent `frontend/` React + TypeScript project built with Vite. Development runs on port `5173` with API paths proxied to FastAPI on `8080`; the production Docker build emits assets served by FastAPI at `/`. The interface is chat-first after compact identity onboarding and includes streaming text, safe progress states, quick prompts, retry/reconnect behavior, responsive mobile layout, keyboard support, accessible live regions, and polished empty and error states. No provider key or restaurant business rule enters the browser bundle.
 
 ## Tool documentation contract
 

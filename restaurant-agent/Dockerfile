@@ -11,11 +11,11 @@ FROM python:3.12-slim
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 LANGGRAPH_STRICT_MSGPACK=true
 WORKDIR /app
 
-COPY pyproject.toml README.md ./
-COPY src ./src
+COPY restaurant-agent/pyproject.toml restaurant-agent/README.md ./
+COPY restaurant-agent/src ./src
 COPY --from=frontend-build /frontend/dist ./frontend/dist
-COPY alembic.ini ./
-COPY main.py ./
+COPY restaurant-agent/alembic.ini ./
+COPY restaurant-agent/main.py ./
 RUN pip install --no-cache-dir .
 
 RUN useradd --create-home --uid 10001 appuser

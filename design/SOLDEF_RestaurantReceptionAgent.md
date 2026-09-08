@@ -181,7 +181,7 @@ As a post-core enhancement, `verbose=true` returns sanitized events describing d
 ##### <u> 1.2.8 FRA-008: Streaming portfolio chat interface </u>
 
 ##### Description:
-Replace the embedded plain HTML test form with an independent `restaurant-agent/frontend/` React + TypeScript application built by Vite. Identity onboarding is compact and transitions into a chat-first workspace rather than remaining visually form-led. The interface includes assistant/customer message bubbles, timestamps, suggested prompts, customer/session context, responsive navigation, accessible focus and live-region behavior, polished empty/error states, and a portfolio-quality visual system. No LLM credential, upstream URL, customer authorization rule, or restaurant business rule is bundled into client code.
+Replace the embedded plain HTML test form with an independent `frontend/` React + TypeScript application built by Vite. Identity onboarding is compact and transitions into a chat-first workspace rather than remaining visually form-led. The interface includes assistant/customer message bubbles, timestamps, suggested prompts, customer/session context, responsive navigation, accessible focus and live-region behavior, polished empty/error states, and a portfolio-quality visual system. No LLM credential, upstream URL, customer authorization rule, or restaurant business rule is bundled into client code.
 
 ##### SSE transport:
 Add `POST /v1/sessions/{session_id}/messages/stream` using the existing `MessageRequest`. FastAPI returns `text/event-stream`; the browser consumes it through `fetch` and a `ReadableStream`. LangGraph async events are mapped only to safe public phases and response tokens. Supported frames are `status`, `delta`, `complete`, `error`, and heartbeat comments. The final `complete` payload is the canonical `MessageResponse` and uses the same database idempotency record as the JSON endpoint. Retries reuse the original `client_message_id`.
@@ -337,7 +337,7 @@ Track request latency, tool error rate, schema failure rate, loop-limit rate, me
 - REST session creation and multi-turn message endpoints defined in the OpenAPI document.
 - Customer lookup/creation, preference recall/update, menu enquiries, availability, reservation create/read/cancel, order add/list/remove, and order-history recall through typed HTTP tools.
 - LangGraph state persisted with an async SQLite checkpointer and backend-persisted durable customer preferences.
-- A separate React + TypeScript portfolio chat in `restaurant-agent/frontend/`, served same-origin after its Vite production build.
+- A separate React + TypeScript portfolio chat in `frontend/`, served same-origin after its Vite production build.
 - SSE status/token streaming with heartbeats, disconnect handling, idempotent retry, and a canonical completion event.
 - Frontend customer/session context, suggested prompts, streaming and pending states, retryable error feedback, accessible status announcements, responsive layout, and a clear new-session action.
 - Conditional human-in-the-loop confirmation for inferred destructive actions, resumable across restarts.

@@ -9,7 +9,7 @@ A separate FastAPI + LangGraph application that provides multi-turn restaurant r
 - Customer-scoped LangChain tools wrap the supplied API and prevent model-controlled identity or URLs.
 - A local SQLite database at `data/agent.db` stores LangGraph checkpoints, sessions, and message idempotency records.
 - A lightweight same-origin browser client is served at `/` for manual testing.
-- The portfolio frontend is a separate React + TypeScript application in `frontend/`; production assets are built by Docker and served same-origin.
+- The portfolio frontend is a separate React + TypeScript application in `../frontend/`; production assets are built by Docker and served same-origin.
 - `POST /v1/sessions/{session_id}/messages/stream` emits SSE progress, response deltas, and the canonical idempotent completion.
 - Booking tools are deterministically gated until party size, date/time, and seating are resolved; new customers must choose indoor, outdoor, or explicitly either.
 - Runtime logs are emitted as privacy-redacted JSON and responses include restrictive browser security headers.
@@ -42,7 +42,7 @@ keyboard submission, and retry feedback. Restaurant decisions remain in the agen
 For frontend hot reload (Node 24+), keep FastAPI on port 8080 and run:
 
 ```powershell
-cd frontend
+cd ../frontend
 npm ci
 npm run dev
 ```

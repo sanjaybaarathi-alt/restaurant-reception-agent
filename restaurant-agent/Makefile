@@ -10,13 +10,13 @@ run:
 	uv run uvicorn main:app --host 0.0.0.0 --port 8080
 
 frontend:
-	cd frontend && npm run dev
+	cd ../frontend && npm run dev
 
 frontend-test:
-	cd frontend && npm test
+	cd ../frontend && npm test
 
 frontend-build:
-	cd frontend && npm run build
+	cd ../frontend && npm run build
 
 lint:
 	uv run ruff check src tests main.py
