@@ -1,0 +1,76 @@
+# Local Codex skills, steering, and hooks
+.agents/
+.codex/
+AGENTS.md
+*-standards.md
+template.md
+**/.agents/
+**/.codex/
+**/.steering/
+**/steering/
+
+# Secrets and local environment overrides
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python environments and caches
+.venv/
+venv/
+**/.venv/
+**/venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+**/.pytest_cache/
+.mypy_cache/
+**/.mypy_cache/
+.ruff_cache/
+**/.ruff_cache/
+.coverage
+**/.coverage
+htmlcov/
+**/htmlcov/
+
+# Local databases and runtime data
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+**/data/*
+!**/data/.gitkeep
+
+# Frontend dependencies and build output
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.vite/
+**/.vite/
+coverage/
+**/coverage/
+
+# IDE and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# TypeScript compiler output
+*.tsbuildinfo
+**/*.tsbuildinfo
+**/vite.config.js
+**/vite.config.d.ts

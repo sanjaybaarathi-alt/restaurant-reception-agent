@@ -1,0 +1,74 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "restaurant-reception-agent"
+version = "0.1.0"
+description = "LangGraph-powered conversational restaurant reception agent"
+readme = "README.md"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+  "alembic==1.16.5",
+  "aiosqlite==0.21.0",
+  "fastapi==0.140.2",
+  "email-validator==2.2.0",
+  "httpx==0.28.1",
+  "langchain-groq==1.1.3",
+  "langgraph==1.2.11",
+  "langgraph-checkpoint-sqlite==3.1.1",
+  "pydantic-settings==2.10.1",
+  "pyyaml==6.0.2",
+  "sqlalchemy==2.0.43",
+  "tzdata==2026.3",
+  "uvicorn[standard]==0.35.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy==1.17.1",
+  "pytest==8.4.1",
+  "pytest-asyncio==1.1.0",
+  "pytest-cov==6.2.1",
+  "respx==0.22.0",
+  "ruff==0.12.10",
+  "types-PyYAML==6.0.12.20250822",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "--strict-markers"
+markers = ["contract: requires the live supplied Restaurant API"]
+
+[tool.coverage.run]
+branch = true
+source = ["src"]
+omit = ["src/migrations/*"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "ASYNC", "S"]
+ignore = ["B008"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["langgraph.*", "langchain_core.*"]
+ignore_missing_imports = true

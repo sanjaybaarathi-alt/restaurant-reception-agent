@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#17261f">
+  <title>Juniper · Restaurant Reception</title><link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="Juniper reception home"><span class="brand-mark">J</span><span><strong>Juniper</strong><small>Restaurant reception</small></span></a>
+      <div class="sidebar-copy"><p class="kicker">YOUR TABLE, THOUGHTFULLY ARRANGED</p><h1>Good evenings begin here.</h1><p>Ask about the menu, reserve a table, plan your order, or revisit an old favourite.</p></div>
+      <div class="service-card"><span class="live-dot" aria-hidden="true"></span><div><strong>Reception online</strong><small>Daily · 12:00–22:30</small></div></div>
+    </aside>
+    <section class="workspace">
+      <section id="identity-panel" class="welcome-card" aria-labelledby="identity-heading">
+        <div class="card-heading"><p class="kicker">WELCOME</p><h2 id="identity-heading">How may we know you?</h2><p>Use your phone or email so we can remember your preferences and bookings.</p></div>
+        <form id="session-form" novalidate>
+          <div class="field-grid"><label><span>Name <em>for new guests</em></span><input name="name" autocomplete="name" placeholder="Priya Sharma"></label><label><span>Phone</span><input name="phone" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210"></label></div>
+          <label><span>Email</span><input name="email" type="email" autocomplete="email" placeholder="priya@example.com"></label>
+          <p id="identity-error" class="form-error" role="alert"></p><button class="primary wide" type="submit"><span>Begin conversation</span><span aria-hidden="true">→</span></button>
+        </form><p class="privacy-note">Your details are used only to find your restaurant profile for this session.</p>
+      </section>
+      <section id="chat-panel" class="chat-card" aria-labelledby="chat-heading" hidden>
+        <header class="chat-header"><div class="agent-avatar" aria-hidden="true">J</div><div class="chat-title"><h2 id="chat-heading">Reception assistant</h2><p><span class="live-dot"></span> Ready to help</p></div><div class="session-person"><strong id="customer-name"></strong><small id="session-label"></small></div><button id="restart" class="icon-button" type="button" title="Start a new session" aria-label="Start a new session">↻</button></header>
+        <div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+        <div id="suggestions" class="suggestions" aria-label="Suggested messages"><button type="button" data-prompt="Book a table for two tomorrow at 7:30 PM">Reserve a table</button><button type="button" data-prompt="Show me the vegetarian starters">Explore the menu</button><button type="button" data-prompt="What did I order last time?">Recall my last order</button></div>
+        <form id="message-form" class="composer"><label class="sr-only" for="message">Message</label><textarea id="message" name="message" rows="1" maxlength="4000" required placeholder="Type your request…"></textarea><button class="send-button" type="submit" aria-label="Send message">↑</button></form>
+        <div class="composer-footer"><span id="status" role="status" aria-live="polite">Ready</span><span>Enter to send · Shift + Enter for a new line</span></div>
+      </section>
+    </section>
+  </main><script src="/static/app.js" defer></script>
+</body>
+</html>

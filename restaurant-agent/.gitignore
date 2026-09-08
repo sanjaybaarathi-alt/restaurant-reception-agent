@@ -1,0 +1,27 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+*.pyc
+data/*.db
+data/*.db-*
+frontend/node_modules/
+frontend/dist/
+
+# Local AI development configuration
+.agents/
+.codex/
+.steering/
+steering/
+AGENTS.md
+*-standards.md
+
+frontend/*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts

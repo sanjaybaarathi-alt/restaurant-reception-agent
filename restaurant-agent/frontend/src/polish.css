@@ -1,0 +1,46 @@
+.story-panel {
+  position: relative;
+  background: radial-gradient(circle at 0 100%, #a7634966, transparent 38%),
+    radial-gradient(circle at 100% 0, #6c9a7b33, transparent 32%),
+    linear-gradient(150deg, #10231a, #234b38);
+}
+
+.story-panel::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid #ffffff12;
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.brand, .availability { position: relative; z-index: 1; }
+.service-list { display: grid; gap: 12px; margin-top: 30px; }
+.service-list span { display: flex; align-items: center; gap: 12px; color: #e7eee9; font-size: .8rem; }
+.service-list b { color: #e3a083; font-size: .65rem; letter-spacing: .1em; }
+
+.onboarding {
+  padding: 38px;
+  border: 1px solid #e4e1d8;
+  border-radius: 24px;
+  background: #ffffffd9;
+  box-shadow: 0 24px 70px #26382d12;
+  backdrop-filter: blur(12px);
+}
+
+.welcome-badge { display: flex; align-items: center; gap: 12px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #e9e6dd; }
+.welcome-badge > div { display: grid; }
+.welcome-badge small { display: flex; align-items: center; gap: 6px; margin-top: 3px; color: #718078; font-size: .7rem; }
+.welcome-badge i { width: 6px; height: 6px; border-radius: 50%; background: #55ae72; box-shadow: 0 0 0 4px #55ae7218; }
+.mini-avatar, .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px; color: #fff; background: #295d45; font: 600 1.2rem Georgia, serif; box-shadow: 0 7px 18px #295d4530; }
+
+.recovery { min-height: 100vh; display: grid; place-items: center; padding: 24px; background: linear-gradient(150deg, #11271d, #295d45); }
+.recovery-card { max-width: 520px; padding: 46px; border-radius: 24px; background: #fffdf8; box-shadow: 0 30px 80px #0004; }
+.recovery-card h1 { font: 600 2.5rem/1.1 Georgia, serif; }
+.recovery-card p:not(.eyebrow) { color: #68756e; line-height: 1.6; }
+.recovery-card button { padding: 13px 20px; border: 0; border-radius: 11px; color: #fff; background: #295d45; font-weight: 700; }
+
+@media (max-width: 540px) {
+  .onboarding { padding: 25px 20px; border-radius: 20px; }
+  .welcome-badge { margin-bottom: 24px; }
+}
